@@ -20,6 +20,8 @@
 
             <asp:Button ID="Button1" runat="server" Text="REGISTRA USUARIO" class="btn btn-success" OnClick="Button1_Click" />
             <asp:Button ID="Button2" runat="server" Text="Usuarios" OnClick="Button2_Click" />
+            <asp:Button ID="Button3" runat="server" Text="excel" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
             <asp:GridView ID="GridView1"  runat="server"  CssClass="table table-responsive tabla_datos"  BorderColor="Transparent" AutoGenerateColumns="False">
                  <Columns>
                     <asp:BoundField DataField="correo" HeaderText="MAIL" />
