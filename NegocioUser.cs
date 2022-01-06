@@ -68,6 +68,28 @@ namespace ProgramaWeb
             return filas;
         }
 
+        public int ElimarUsuarios(string correo)
+        {
+            int filas = 0;
+            SqlConnection con = new SqlConnection(Conexion.Cadena());
+            try
+            {
+                con.Open();
+                string query = @"delete from Usuarios where correo='"+correo+"'";
+                SqlCommand cmd = new SqlCommand(query, con);
+                filas = cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                con.Close();
+            }
+            return filas;
+        }
         public List<User> consultar_Usuarios()
         {
             SqlConnection con = new SqlConnection(Conexion.Cadena());

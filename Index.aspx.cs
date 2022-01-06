@@ -48,7 +48,16 @@ namespace ProgramaWeb
 
         protected void Btn_eliminar(object sender, EventArgs e)
         {
-      
+            Session["correo"] = 0;
+            string cedper = (sender as LinkButton).CommandArgument;
+            Session["correo"] = cedper;
+
+            NegocioUser model = new NegocioUser();
+            int filas = model.ElimarUsuarios(cedper);
+
+            Response.Write("<script language=javascript>alert('uSUARIO ELIMINADO ');</script>");
+            CargarDatGriwUsuairo();
+
         }
     }
 }
