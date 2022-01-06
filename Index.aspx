@@ -11,26 +11,30 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="MI PRIMER PROGRAMA ASP.NET" CssClass="align-items-xl-center"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Label ID="Label1" runat="server" Text="REGISTRO DE MAIL"></asp:Label>
+            <asp:TextBox ID="Mail" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="JAIRO DAVID PUMA ASP.NET"></asp:Label>
-    
-            <h1>HOJA DE VIDA <span class="label label-default"></span></h1>
+            <asp:Label ID="Label2" runat="server" Text="REGISTRO DE CLAVE"></asp:Label>
+            <asp:TextBox ID="Password" runat="server"></asp:TextBox>
+            <br />
 
-            <h2>NOMBRE <span class="label label-default"></span></h2>
-             <h2>JAIRO DAVID PUMA <span class="label label-default">New</span></h2>
-            <h3>Example <span class="label label-default">New</span></h3>
-            <h4>Example <span class="label label-default">New</span></h4>
-            <h5>Example <span class="label label-default">New</span></h5>
-            <h6>Example <span class="label label-default">New</span></h6>
-    <span class="label label-default">Default Label</span>
-<span class="label label-primary">Primary Label</span>
-<span class="label label-success">Success Label</span>
-<span class="label label-info">Info Label</span>
-<span class="label label-warning">Warning Label</span>
-<span class="label label-danger">Danger Label</span>
+            <asp:Button ID="Button1" runat="server" Text="REGISTRA USUARIO" class="btn btn-success" OnClick="Button1_Click" />
+            <asp:Button ID="Button2" runat="server" Text="Usuarios" OnClick="Button2_Click" />
+            <asp:GridView ID="GridView1"  runat="server"  CssClass="table table-responsive tabla_datos"  BorderColor="Transparent" AutoGenerateColumns="False">
+                 <Columns>
+                    <asp:BoundField DataField="correo" HeaderText="MAIL" />
+                    <asp:BoundField DataField="password" HeaderText="PASSWORD" />
+ 
+                      <asp:TemplateField>
+                <ItemTemplate>                   
+                       <asp:LinkButton ID="btn_Asignar_rc" runat="server"  CommandArgument='<%# Eval("correo" ) %>'   CssClass="btn btn-primary" BorderColor="Transparent" OnClick="Btn_eliminar" >
+                       <span class="glyphicon glyphicon-list-alt">ELIMINAR</span>
+                    </asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+                </Columns>
 
+            </asp:GridView>
         </div>
     </form>
 </body>
